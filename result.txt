@@ -1,0 +1,18 @@
+1.
+2.
+0.
+9.
+1.
+27.
+3.14285714286
+0.
+18.
+1.
+2.
+5.
+Invalid input
+Not a number
+Divide by zero
+Divide by zero
+Not enough arguments
+Invalid input
