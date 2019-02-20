@@ -6,7 +6,7 @@
 		{
 			"type": "shell",
 			"label": "Build",
-			"command": "ocamlfind ocamlc -o RPN -package str -linkpkg -g rpn.ml; ./RPN",
+			"command": "ocamlfind ocamlc -o RPN -linkpkg -g rpn.ml; ./RPN",
 			"group": {
 				"kind": "build",
 				"isDefault": true
@@ -19,7 +19,7 @@
 		{
 			"type": "shell",
 			"label": "Test",
-			"command": "ocamlfind ocamlc -o Test -package oUnit -package str -linkpkg -g rpn.ml test.ml; ./Test",
+			"command": "ocamlfind ocamlc -o Test -package oUnit -linkpkg -g rpn.ml test.ml; ./Test",
 			"group": {
 				"kind": "test",
 				"isDefault": true
