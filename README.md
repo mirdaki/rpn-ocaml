@@ -11,7 +11,7 @@ As far as I'm aware, all RPN statements should work. It should also catch potent
 To compile the RPN, run the following:
 
 ```bash
-ocamlfind ocamlc -o RPN -linkpkg -g rpn.ml
+ocamlfind ocamlc -o RPN -package str -linkpkg -g rpn.ml
 ```
 
 Then run it with:
@@ -35,7 +35,7 @@ There is a set of test cases provided in the `test.txt` and `result.txt` files. 
 To compile the unit test, run the following:
 
 ```bash
-ocamlfind ocamlc -o Test -package oUnit -linkpkg -g rpn.ml test.ml
+ocamlfind ocamlc -o Test -package str -package oUnit -linkpkg -g rpn.ml test.ml
 ```
 
 Then run it with:

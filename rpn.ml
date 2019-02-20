@@ -1,3 +1,5 @@
+open Str
+
 (* Defintion for input items *)
 type token =
   | Number of float
@@ -69,7 +71,7 @@ let result_to_string (input: stackState) : string =
 (* Connect all of the RPN functions together to do the RPN evaluation *)
 let process_rpn (input: string) =
   input |> (* Get the input *)
-  String.split_on_char ' ' |> (* Break up the input on spaces *)
+  Str.split (Str.regexp " +") |> (* Break up the input on spaces *)
   List.map to_token |> (* Make the broken up string into a token list *)
   List.fold_left next_state (Stack[]) |> (* Find the stack processing the input left-to-right *)
   result_to_string (* result into string *)

@@ -5,8 +5,8 @@ let test_fixture = "rpn" >:::
 [
   "correct" >:: ( fun () -> 
     assert_equal "1." (Rpn.process_rpn "1");
-    assert_equal "2." (Rpn.process_rpn "1 1 +");
-    assert_equal "0.5" (Rpn.process_rpn "1.5 1 -");
+    assert_equal "2." (Rpn.process_rpn "1 1 + ");
+    assert_equal "0.5" (Rpn.process_rpn "1.5   1 -");
     assert_equal "9." (Rpn.process_rpn "3 3 *");
     assert_equal "1." (Rpn.process_rpn "3 3 /");
     assert_equal "27." (Rpn.process_rpn "3 3 ^");
@@ -19,7 +19,7 @@ let test_fixture = "rpn" >:::
   );
 
   "error" >:: ( fun () ->
-    assert_equal "Unrecognized token ''" (Rpn.process_rpn "");
+    assert_equal "Not enough operators" (Rpn.process_rpn "");
     assert_equal "Not enough arguments for '-'" (Rpn.process_rpn "-");
     assert_equal "Unrecognized token 'q'" (Rpn.process_rpn "1 q -");
     assert_equal "Divide by zero" (Rpn.process_rpn "1 0 /");
